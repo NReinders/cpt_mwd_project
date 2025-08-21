@@ -69,4 +69,5 @@ plt.ylabel('Penetration Speed')
 plt.grid(True)
 
 plt.tight_layout()
+plt.savefig("data/5_figures/figure_1_mwd_lineplots.png", dpi=200)
 plt.show()

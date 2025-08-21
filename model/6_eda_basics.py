@@ -59,6 +59,7 @@ plt.ylabel("Depth (m)")
 plt.gca().invert_yaxis()
 plt.grid(True)
 plt.tight_layout()
+plt.savefig("data/5_figures/Rod_Changes_Over_Depth.png", dpi=200)
 plt.show()
 
 # Value counts categorische kolommen
@@ -77,6 +78,7 @@ plt.xlabel("Depth (m)")
 plt.ylabel("Depth Raw (m)")
 plt.grid(True)
 plt.tight_layout()
+plt.savefig("data/5_figures/figure_3_depth_vs_depth_raw.png", dpi=200)
 plt.show()
 
 # Check of depth uniek is
@@ -100,20 +102,21 @@ plt.title("fs vs Depth")
 plt.gca().invert_yaxis()
 
 plt.tight_layout()
+plt.savefig("data/5_figures/figure_4_qc_and_fs_vs_depth.png", dpi=200)
 plt.show()
 
 # === Dataset verwerken ===
 
 # 1. Verwijder constante kolommen
-to_drop = ["running_status", "location_status", "location"]
+to_drop = ["running_status", "sonic_status", "location_status", "location"]
 df_processed = df.drop(columns=to_drop)
 
-# 2. Binaire encodering voor 'sonic_status'
-df_processed["sonic_status"] = df_processed["sonic_status"].map({"started": 1, "stopped": 0})
-
-# 3. Binaire encodering voor 'operation_mode'
+# 2. Binaire encodering voor 'operation_mode'
 df_processed["operation_mode"] = df_processed["operation_mode"].map({"Dynamic": 1, "Manual": 0})
 
 # Opslaan als processed dataset
 df_processed.to_csv("data/3_processed/processed_cpt_mwd.csv", index=False)
 print("\nProcessed dataset saved as 'data/3_processed/processed_cpt_mwd.csv'")
+
+# Check aantal overgebleven kolommen
+print(df_processed.info())

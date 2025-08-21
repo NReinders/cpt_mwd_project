@@ -15,3 +15,6 @@ df['torque_to_penetration'] = df['torque'] / (df['penetration_speed'] + 1e-6)
 output_path = "data/3_processed/processed_cpt_mwd_with_new_features.csv"
 df.to_csv(output_path, index=False)
 print(f"Bestand opgeslagen als: {output_path}")
+
+# === Check welke features er nu allemaal zijn ===
+print(df.info())

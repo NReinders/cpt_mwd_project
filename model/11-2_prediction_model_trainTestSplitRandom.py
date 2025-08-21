@@ -15,7 +15,11 @@ configs = [
         "name": "qc",
         "target": "qc",
         "features": [
-            "sonic_speed", "g_total", "flushing_debit", "air_temperature"
+            "air_temperature", "operation_mode", "sonic_pressure", "rotation_pressure",
+            "pullup_pressure", "pulldown_pressure", "inclination_x", "inclination_y",
+            "flushing_pressure", "flushing_debit", "sonic_speed", "rotation_speed",
+            "penetration_speed", "pull_diff", "torque_per_rotation", "g_total",
+            "energy_input", "mechanical_stress", "torque_to_penetration"
         ],
         "inverse_transform": False
     },
@@ -23,8 +27,11 @@ configs = [
         "name": "fs",
         "target": "fs",
         "features": [
-            "flushing_debit", "g_total", "sonic_speed", "pullup_pressure",
-            "sonic_pressure", "air_temperature", "rotation_pressure", "energy_input"
+            "air_temperature", "operation_mode", "sonic_pressure", "rotation_pressure",
+            "pullup_pressure", "pulldown_pressure", "inclination_x", "inclination_y",
+            "flushing_pressure", "flushing_debit", "sonic_speed", "rotation_speed",
+            "penetration_speed", "pull_diff", "torque_per_rotation", "g_total",
+            "energy_input", "mechanical_stress", "torque_to_penetration"
         ],
         "inverse_transform": False
     },
@@ -33,8 +40,11 @@ configs = [
         "target": "fs_sqrt",
         "true_target": "fs",
         "features": [
-            "sonic_speed", "g_total", "flushing_pressure", "rotation_pressure",
-            "pullup_pressure", "pulldown_pressure", "flushing_debit"
+            "air_temperature", "operation_mode", "sonic_pressure", "rotation_pressure",
+            "pullup_pressure", "pulldown_pressure", "inclination_x", "inclination_y",
+            "flushing_pressure", "flushing_debit", "sonic_speed", "rotation_speed",
+            "penetration_speed", "pull_diff", "torque_per_rotation", "g_total",
+            "energy_input", "mechanical_stress", "torque_to_penetration"
         ],
         "inverse_transform": True
     }

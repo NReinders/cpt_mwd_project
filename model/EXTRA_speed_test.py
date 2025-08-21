@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
 # 1. Load dataset
-df = pd.read_csv("data/3_processed/processed_cpt_mwd_with_outlier_flags.csv")
+df = pd.read_csv("data/3_processed/processed_cpt_mwd_with_new_features.csv")
 
 # 2. Filter out rows with implausible values
 df = df[df['fs'] >= 0]
@@ -28,10 +28,11 @@ end_feat_eng = time.time()
 print(f" Feature engineering took: {end_feat_eng - start_feat_eng:.4f} seconds")
 
 # 6. Define features and target
-features = [
-    'sonic_speed', 'g_total', 'flushing_debit', 'air_temperature',
-    'pull_diff', 'torque_per_rotation', 'energy_input', 'mechanical_stress',
-    'rotation_pressure', 'pullup_pressure', 'flushing_pressure', 'pulldown_pressure'
+features = ["air_temperature", "operation_mode", "sonic_pressure", "rotation_pressure",
+            "pullup_pressure", "pulldown_pressure", "inclination_x", "inclination_y",
+            "flushing_pressure", "flushing_debit", "sonic_speed", "rotation_speed",
+            "penetration_speed", "pull_diff", "torque_per_rotation", "g_total",
+            "energy_input", "mechanical_stress", "torque_to_penetration"
 ]
 
 target = 'qc'
